@@ -9,12 +9,12 @@ const FilterItem = ({ filter, id, onClick }) => {
     fRef.current.checked = true;
     const selectfilter = fRef.current.value;
 
-    onclick(selectfilter);
+    onClick(selectfilter);
   };
 
   return (
     <li onClick={handleClick}>
-      <input type="radio" name="category" value={ value } id={ id } defaultChecked />
+      <input ref={fRef} type="radio" name="category" value={ value } id={ id } defaultChecked />
       <label htmlFor="filter0">{ name }</label>
     </li>
   );

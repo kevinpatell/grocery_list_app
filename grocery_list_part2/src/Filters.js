@@ -1,13 +1,14 @@
 import React from 'react';
 import FilterItem from './FilterItem';
 
-const Filters = ({ filters, chooseFilter }) => {
+const Filters = ({ filters, filterItems }) => {
 
   const onChosenFilter = (f) => {
-    chooseFilter(f);
-  };
+    // console.log(selectedFilter)
+    filterItems(f)
+  }
 
-  const filterElements = filters.map((filter, i) => <FilterItem key={i} id={i} filter={ filter } onClick={onChosenFilter}/>);
+  const filterElements = filters.map((filter, i) => <FilterItem key={i} id={i} filter={filter} onClick={onChosenFilter} />);
 
   return (
     <section id="filterCategories">
